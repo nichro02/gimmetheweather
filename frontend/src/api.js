@@ -1,7 +1,9 @@
+import {GeoDBCitiesKey} from './environment'
+
 export const geoApiOptions = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': '3ab63b1610mshb36565b534e2d90p1ff314jsn43ab8cb0a51f',
+		'X-RapidAPI-Key': GeoDBCitiesKey,
 		'X-RapidAPI-Host': 'wft-geo-db.p.rapidapi.com'
 	}
 };
