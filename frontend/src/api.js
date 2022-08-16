@@ -1,4 +1,4 @@
-import {GeoDBCitiesKey, WeatherAPIKey} from './environment'
+import {GeoDBCitiesKey} from './environment'
 
 export const geoApiOptions = {
 	method: 'GET',
