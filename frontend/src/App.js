@@ -1,11 +1,26 @@
 import './App.css'
 import Search from './components/search/search'
 import CurrentWeather from './components/currentWeather/currentWeather'
+import WEATHER_API_URL from './api'
+import {WeatherAPIKey} from './environment'
+
 
 function App() {
   
   const handleOnSearchChange = (searchData) => {
-    console.log(searchData)
+    const [lat, lon] = searchData.value.split(' ')
+    console.log('LAT ---> ',lat,'LON ---> ', lon)
+
+    //fetch current weather and forecast
+    const currentWeatherFetch = fetch(
+      `${WEATHER_API_URL}/weather?lat=${lat}&lon=${lon}&appid=${WeatherAPIKey}`
+    )
+
+    const forecastFetch = fetch(
+      `${WEATHER_API_URL}/forecast?lat=${lat}&lon=${lon}&appid=${WeatherAPIKey}`
+    )
+
+    // api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
   }
 
   return (
