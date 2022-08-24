@@ -1,37 +1,37 @@
 import "./currentWeather.css";
 
-const CurrentWeather = () => {
+const CurrentWeather = ({data}) => {
   return (
     <div className="weather">
       <div className="top">
         <div>
-          <p className="city">City:</p>
-          <p className="weather-description">Weather</p>
+          <p className="city">{data.city}</p>
+            <p className="weather-description">{data.weather[0].description}</p>
         </div>
-        <img alt="weather" className="weather-icon" src="icons/01d.png" />
+        <img alt="weather" className="weather-icon" src={`icons/${data.weather[0].icon}.png`} />
       </div>
 
       <div className='bottom'>
-        <p className='temperature'>x°C</p>
+  <p className='temperature'>{data.main.temp}°C</p>
         <div className='details'>
             <div className='parameter-row'>
                 <span className='parameter-label top'>Details</span>
             </div>
             <div className='parameter-row'>
-                <span className='parameter-label'>Feels like</span>
-                <span className='parameter-value'>Temperature</span>
+                <span className='parameter-label'>Feels like: </span>
+                <span className='parameter-value'>{data.main.feels_like}°C</span>
             </div>
             <div className='parameter-row'>
                 <span className='parameter-label'>Wind</span>
-                <span className='parameter-value'>Wind speed</span>
+  <span className='parameter-value'>{data.wind.speed} km/h</span>
             </div>
             <div className='parameter-row'>
                 <span className='parameter-label'>Humidity</span>
-                <span className='parameter-value'>Humidity %</span>
+                <span className='parameter-value'>{data.main.humidity} %</span>
             </div>
             <div className='parameter-row'>
                 <span className='parameter-label'>Pressure</span>
-                <span className='parameter-value'>Amount of pressure</span>
+                <span className='parameter-value'>{data.main.pressure}</span>
             </div>
         </div>
       </div>
