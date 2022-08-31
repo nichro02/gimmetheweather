@@ -36,7 +36,7 @@ function App() {
       .catch(err => console.log(err))
   }
 
-  console.log('CURRENT WEATHER --> ', currentWeather)
+  //console.log('CURRENT WEATHER --> ', currentWeather)
   console.log('FORECAST ---> ', forecast)
 
   return (
