@@ -6,6 +6,8 @@ import {
   AccordionItemButton,
 } from "react-accessible-accordion";
 
+import './forecast.css'
+
 const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
 const Forecast = ({ data }) => {

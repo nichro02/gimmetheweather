@@ -37,7 +37,7 @@ function App() {
   }
 
   console.log('CURRENT WEATHER --> ', currentWeather)
-  //console.log('FORECAST ---> ', forecast)
+  console.log('FORECAST ---> ', forecast)
 
   return (
     <div className="container">
