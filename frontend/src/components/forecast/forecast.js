@@ -16,12 +16,12 @@ const Forecast = ({ data }) => {
   //order array so that dayInWeek is first element in array
   const forecastDays = daysOfWeek.slice(dayInWeek, daysOfWeek.length).concat(daysOfWeek.slice(0, dayInWeek))
 
-  console.log(dayInWeek)
+  //console.log(dayInWeek)
   console.log(forecastDays)
 
     return (
     <>
-      <label className="title">Daily Forecast</label>
+      <label className="title">Upcoming Forecast</label>
       <Accordion allowZeroExpanded>
         {data.list.splice(0, 7).map((item, idx) => (
           <AccordionItem key={idx}>
@@ -36,7 +36,30 @@ const Forecast = ({ data }) => {
                     </div>
                 </AccordionItemButton>
             </AccordionItemHeading>
-            <AccordionItemPanel></AccordionItemPanel>
+            <AccordionItemPanel>
+                <div className='daily-details-grid'>
+                <div className='daily-details-grid-item'>
+                        <label>Feels like </label>
+                        <label>{Math.round(item.main.feels_like) }°C</label>
+                    </div>
+                    <div className='daily-details-grid-item'>
+                        <label>Pressure </label>
+                        <label>{item.main.pressure}</label>
+                    </div>
+                    <div className='daily-details-grid-item'>
+                        <label>Humidity </label>
+                        <label>{item.main.humidity}</label>
+                    </div>
+                    <div className='daily-details-grid-item'>
+                        <label>Clouds </label>
+                        <label>{item.clouds.all}</label>
+                    </div>
+                    <div className='daily-details-grid-item'>
+                        <label>Wind </label>
+                        <label>{item.wind.speed} m/s</label>
+                    </div>
+                </div>
+            </AccordionItemPanel>
           </AccordionItem>
         ))}
       </Accordion>
