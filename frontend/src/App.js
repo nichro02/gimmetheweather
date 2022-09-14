@@ -44,7 +44,11 @@ function App() {
       <Search onSearchChange={handleOnSearchChange} />
       {currentWeather && <CurrentWeather data={currentWeather} />}
       {forecast && <Forecast data={forecast} />}
-      {!currentWeather && !forecast && (<div className="data-placeholder">Search for a city to see information about its weather!</div>)}
+      {!currentWeather && !forecast && (
+        <div className="data-placeholder">
+          Search for a city to see information about its weather!
+        </div>
+      )}
     </div>
   );
 }
